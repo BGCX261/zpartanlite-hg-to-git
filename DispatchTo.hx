@@ -1,4 +1,4 @@
-package divtastic;
+package zpartanlite;
 
 class DispatchTo
 {

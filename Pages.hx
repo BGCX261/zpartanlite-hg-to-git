@@ -1,5 +1,5 @@
-package divtastic;
-import divtastic.Enumerables;
+package zpartanlite;
+import zpartanlite.Enumerables;
 
 class Pages<T>
 {
@@ -17,7 +17,7 @@ class Pages<T>
     public var hideNext:    DispatchTo ;
     public var hidePrev:    DispatchTo ;
     public var dir:         Travel;
-    
+    public var looped:      DispatchTo ;
     
     public function new( ?arr_: Array<T>, ?circle_: Bool = false )
     {
@@ -26,6 +26,7 @@ class Pages<T>
         pageChange  = new DispatchTo() ;
         hideNext    = new DispatchTo() ;
         hidePrev    = new DispatchTo() ;
+        looped      = new DispatchTo() ;
         reset( arr_ ) ;
         
     }
@@ -65,6 +66,7 @@ class Pages<T>
             if( circle )
             {
                 index = 0 ;
+                looped.dispatch();
             }
             else
             {
@@ -279,6 +281,13 @@ class Pages<T>
         
     }
     
+    public function isLast():Bool
+    {
+        
+        if( index == len - 1 ) return true;
+        return false;
+        
+    }
     
     public function getIndex(): Int
     {
