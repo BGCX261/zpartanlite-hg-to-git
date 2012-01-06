@@ -20,4 +20,4 @@ enum Travel
     Back;
 }
 
-class Enumerables{
+class Enumerables{}
