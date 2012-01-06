@@ -1,0 +1,8 @@
+<project name="zpartanlite" url="http://code.google.com/p/zpartanlite/" license="BSD">
+    <user name="JLM"/>
+    <tag v="flash"/>
+    <tag v='js'/>
+    <tag v='as3'/>
+    <description>Simple - 'zpartan', lite - 'small', library for general haXe and as3, includes 'DispatchTo', and 'Page'</description>
+    <version name="0.96">Fixed error in Enumerables</version>
+</project>
