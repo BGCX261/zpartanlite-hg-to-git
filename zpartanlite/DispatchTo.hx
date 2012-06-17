@@ -1,3 +1,34 @@
+/*
+* Copyright (c) 2012, Justinfront Ltd
+*   author:  Justin L Mills
+*   email:   JLM at Justinfront dot net
+*   created: 17 June 2012
+* All rights reserved.
+*
+* Redistribution and use in source and binary forms, with or without
+* modification, are permitted provided that the following conditions are met:
+*     * Redistributions of source code must retain the above copyright
+*       notice, this list of conditions and the following disclaimer.
+*     * Redistributions in binary form must reproduce the above copyright
+*       notice, this list of conditions and the following disclaimer in the
+*       documentation and/or other materials provided with the distribution.
+*     * Neither the name of the Justinfront Ltd nor the
+*       names of its contributors may be used to endorse or promote products
+*       derived from this software without specific prior written permission.
+*
+* THIS SOFTWARE IS PROVIDED BY Justinfront Ltd ''AS IS'' AND ANY
+* EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+* WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+* DISCLAIMED. IN NO EVENT SHALL Justinfront Ltd BE LIABLE FOR ANY
+* DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+* (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+* LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+* ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+* (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+* SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+
 package zpartanlite;
 
 class DispatchTo
@@ -6,11 +37,11 @@ class DispatchTo
     // don't use an array unless there are lots of signals.
     // have to return dynamic because sometimes need to allow a return type not void
     private var func0:                          Void -> Dynamic ;
-    private var times0:                         Int;
+    private var times0:                         Null<Int>;
     
     private var func:                           Array<Void -> Dynamic> ;
-    private var times:                          Array<Int> ;
-    public var length( get_length, null ):      Int ;
+    private var times:                          Array<Null<Int>> ;
+    public var length( get_length, null ):      Null<Int> ;
     
     // Allows events like mouse down to be added removed.
     public var tellEnabled:                     Void -> Void;
@@ -34,7 +65,7 @@ class DispatchTo
         
     }
     
-    private function get_length(): Int
+    private function get_length(): Null<Int>
     {
         
         if( func == null )
@@ -114,8 +145,9 @@ class DispatchTo
             times   = new Array() ;
             func.push( func0 );
             times.push( times0 );
-            func0 = null;
-            times0 = null;
+            func0   = null;
+            times0  = null;
+            
         }
         
         // Store second... 
